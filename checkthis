@@ -1,0 +1,21 @@
+[{"year":2020,"published":[{"order":1,"text":"X. Zhou, K. Parida, O. Halevi, S. Magdassi, P. S. Lee, Sensors 2020, 20 (23), 6748."},{"order":2,"text":"X. Zhou, K. Parida, O. Halevi, S. Magdassi, P. S. Lee, Sensors 2020, 20 (23), 1234."},{"order":3,"text":"X. Zhou, K. Parida, O. Halevi, S. Magdassi, P. S. Lee, Sensors 2020, 20 (23), 3223."},{"order":4,"text":"X. Zhou, K. Parida, O. Halevi, S. Magdassi, P. S. Lee, Sensors 2020, 20 (23), 42343."},{"order":5,"text":"X. Zhou, K. Parida, O. Halevi, S. Magdassi, P. S. Lee, Sensors 2020, 20 (23), 3423."}]},{"year":2019,"published":[{"order":1,"text":"X. Zhou, K. Parida, O. Halevi, S. Magdassi, P. S. Lee, Sensors 2019, 20 (23), 6748."},{"order":2,"text":"X. Zhou, K. Parida, O. Halevi, S. Magdassi, P. S. Lee, Sensors 2019, 20 (23), 1234."},{"order":3,"text":"X. Zhou, K. Parida, O. Halevi, S. Magdassi, P. S. Lee, Sensors 2019, 20 (23), 3223."},{"order":4,"text":"X. Zhou, K. Parida, O. Halevi, S. Magdassi, P. S. Lee, Sensors 2019, 20 (23), 42343."},{"order":5,"text":"X. Zhou, K. Parida, O. Halevi, S. Magdassi, P. S. Lee, Sensors 2019, 20 (23), 3423."}]},{"year":2018,"published":[{"order":1,"text":"X. Zhou, K. Parida, O. Halevi, S. Magdassi, P. S. Lee, Sensors 2018, 20 (23), 6748."},{"order":2,"text":"X. Zhou, K. Parida, O. Halevi, S. Magdassi, P. S. Lee, Sensors 2018, 20 (23), 1234."},{"order":3,"text":"X. Zhou, K. Parida, O. Halevi, S. Magdassi, P. S. Lee, Sensors 2018, 20 (23), 3223."},{"order":4,"text":"X. Zhou, K. Parida, O. Halevi, S. Magdassi, P. S. Lee, Sensors 2018, 20 (23), 42343."},{"order":5,"text":"X. Zhou, K. Parida, O. Halevi, S. Magdassi, P. S. Lee, Sensors 2018, 20 (23), 3423."}]}]
+
+
+function sortObject(obj) {
+    var arr = [];
+    for (var prop in obj) {
+        if (obj.hasOwnProperty(prop)) {
+            arr.push({
+                'key': prop,
+                'value': obj[prop]
+            });
+        }
+    }
+    arr.sort(function(a, b) { return a.value - b.value; });
+    //arr.sort(function(a, b) { a.value.toLowerCase().localeCompare(b.value.toLowerCase()); }); //use this to sort as strings
+    return arr; // returns array
+}
+
+var list = {"you": 100, "me": 75, "foo": 116, "bar": 15};
+var arr = sortObject(list);
+console.log(arr);
