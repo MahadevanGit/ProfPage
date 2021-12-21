@@ -3,7 +3,7 @@
 var data ={
     "prof" : {
         "code": "Prof",
-        "name" : "Prof. Sueresh V",
+        "name" : "Prof. Suresh V",
         "gender" : "male",
         "designation" : "Associative Professor",
         "emailId" : "email@nus.com",
