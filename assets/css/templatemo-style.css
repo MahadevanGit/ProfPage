@@ -24,8 +24,10 @@ body {
 
 /* Basic */
 
-body {
-    overflow-x: hidden;
+body{
+	overflow-x: hidden;
+  /*background-color: white;   For browsers that do not support gradients */
+  /* background-image: linear-gradient(to right, rgb(230, 230, 255), rgb(255, 255, 255)); */
 }
 
 input,
@@ -40,9 +42,15 @@ a:hover {
 }
 
 p {
-    font-size: 16px;
+    /* font-size: 16px;
     line-height: 24px;
-    color: #fff;
+    color: #fff; */
+    margin: 0px;
+    font-size: 18px;
+	color: #101010;
+    /* color: #fff; T1*/
+    letter-spacing: 0.5px;
+    font-weight: 600;
 }
 
 h4 {
@@ -78,6 +86,14 @@ div.puplications {
     text-align: left;
 }
 
+.puplications li{
+	color: blue ;
+}
+
+label span{
+	color: blue ;
+}
+
 /* ul li {
     display: inline-block;
 } */
@@ -86,11 +102,57 @@ div.puplications {
     display: inline-block;
 }
 
+.verticalListIcon{
+    display: block;
+    padding: 5px;
+    background: #101010;
+    width: 50px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    margin: 10px;
+}
+
+.fa:before{
+	color: blue;
+}
+
+.fa{
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: larger;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    width: 40px;
+}
+
+.con-span{
+    color: #101010;
+    padding: 10px;
+}
+
 .verticalList::before {
     margin-right: 5px;
     content: "•";
-    color: #a43f49;
+	color: blue;
+    /* color: #a43f49; T1*/
     display: inline-block;
+}
+
+.verticalList{
+	margin-top: 5px;
+    font-size: 18px;
+	color: #101010;
+    /* color: #fff; T1*/
+    letter-spacing: 0.5px;
+    font-weight: 600;
 }
 
 html {
@@ -130,7 +192,7 @@ html {
 }
 
 .main-nav li:last-child a {
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid grey;
 }
 
 .main-nav li {
@@ -146,13 +208,15 @@ html {
     color: #fff;
     width: 100%;
     transition: all 0.5s;
-    border-top: 2px solid #fff;
+    /* for navigation bar */
+    border-top: 2px solid rgb(250, 250, 250); 
 }
 
 .main-nav li:hover a,
 .main-nav li.active a {
     background: #fff;
-    color: #8c363e;
+	color: #101010
+    /* color: #8c363e; T1*/
 }
 
 .spanResearchTeamName {
@@ -218,7 +282,7 @@ html {
 }
 
 .menu .copyright-text p {
-    border-top: 1px solid rgba(250, 250, 250, 0.1);
+    /* border-top: 1px solid grey; */
     display: inline-block;
     width: 100%;
     padding-left: 30px;
@@ -254,7 +318,8 @@ html {
     left: 10%;
   -webkit-transition: -webkit-transform 233ms cubic-bezier(0, 0, 0.21, 1);
   -webkit-overflow-scrolling: touch;
-  background-color: #a43f49;
+  background-color: #423fa4;
+  /* background-color: #a43f49; T1*/
   box-sizing: border-box;
   height: 100vh;  
   max-height: 100vh !important;
@@ -322,38 +387,55 @@ html {
     position: relative;
     min-height: 100vh;
     padding-bottom: 80px;
-    border-bottom: 3px solid rgba(250, 250, 250, 0.25);
+    border-bottom: 3px solid grey;
 }
 
 .section-heading {
     text-align: center;
-    padding: 80px 45px;
+    color: #101010;
+    /* padding: 80px 45px;s */
+}
+
+.section-heading-i {
+    text-align: center;
 }
 
 .section-heading h2 {
     font-size: 32px;
     font-weight: 700;
-    color: #fff;
+	color: #101010;
+    /* color: #fff; T1*/
+}
+
+.section-heading h4 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #101010;
+	/* color: #fff; T1*/
 }
 
 .section-heading .line-dec {
     width: 60px;
     height: 3px;
-    background-color: #a43f49;
+	background-color: #101010;
+    /* background-color: #a43f49; T1*/
     margin: 10px auto;
 }
 
 .sub-line {
     width: 60px;
     height: 1px;
-    background-color: #a43f49;
+	background-color: #101010;
+    /* background-color: #a43f49; T1*/
 }
 
 .section-heading span {
     margin-top: 5px;
-    font-size: 16px;
-    color: #fff;
+    font-size: 18px;
+	color: #101010;
+    /* color: #fff; T1*/
     letter-spacing: 0.5px;
+    font-weight: 600;
 }
 
 
@@ -363,7 +445,7 @@ html {
     display: inline-block;
     padding: 12px 20px;
     background-color: #fff;
-    color: #a43f49;
+    color: #101010;
     font-size: 13px;
     font-weight: 800;
     letter-spacing: 0.5px;
@@ -372,7 +454,7 @@ html {
 }
 
 .white-button a:hover {
-    background-color: #a43f49;
+    background-color: #101010;
     color: #fff;
 }
 
@@ -403,13 +485,13 @@ button:hover {
 .right-image-post {
     margin-top: 60px;
     padding-top: 60px;
-    border-top: 2px solid rgba(250, 250, 250, 0.1);
+    /* border-top: 2px solid grey; */
 }
 
 .left-image-post {
     margin-top: 60px;
     padding-top: 60px;
-    border-top: 2px solid rgba(250, 250, 250, 0.1);
+    /* border-top: 2px solid grey; */
 }
 
 .left-image img,
@@ -417,8 +499,8 @@ button:hover {
     border-radius: 5px;
 }
 
-.right-image-post h4,
-.left-image-post h4 {
+.right-image-post,
+.left-image-post{
     margin-top: 30px;
 }
 
@@ -540,8 +622,10 @@ section.my-work .section-heading {
 }
 
 .isotope-toolbar input[type="radio"]:checked + span {
-    color: #a43f49;
-    border-bottom: 2px solid #a43f49;
+    /* color: #a43f49; T1*/
+    /* border-bottom: 2px solid #a43f49; T1*/
+	color: #101010; 
+    border-bottom: 2px solid #101010;
 }
 
 .isotope-box {
@@ -555,7 +639,7 @@ section.my-work .section-heading {
 }
 
 .isotope-toolbar p {
-    border-top: 1px solid #fff;
+    /* border-top: 1px solid grey; */
     padding-top: 15px;
 }
 
@@ -567,7 +651,7 @@ section.my-work .section-heading {
     position: relative;
     width: 48%;
     margin: 1%;
-    border-bottom: 2px solid rgba(250,250,250,0.1);
+    /* border-bottom: 2px solid grey; */
     padding-bottom: 30px;
     margin-bottom: 30px;
 }
@@ -672,11 +756,19 @@ figure.snip1321.hover:after {
   opacity: 0.9;
 }
 
+/* News */
+
+.sec-news {
+    text-align: center;
+    padding-top: 80px;
+}
+
 
 /* Contact Me */
 
 section.contact-me {
-    border-bottom: none;
+    border-bottom: 3px solid grey;
+    padding-top: 80px;
 }
 
 #contact input {
