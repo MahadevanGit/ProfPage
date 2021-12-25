@@ -64,8 +64,9 @@ https://templatemo.com/tm-531-reflux
         <div class="left-image-post">
           <div class="row">
             <div class="col-md-6">
-              <div class="left-image">
-                <img src="assets/images/myIntrest.jpg" alt="" />
+              <div id="divIntrestContentImage" class="left-image">
+                <!-- <img id="intrestContent-image" /> src="assets/images/myIntrest.jpg" alt="" -->
+                
               </div>
             </div>
             <div class="col-md-6">
@@ -74,7 +75,9 @@ https://templatemo.com/tm-531-reflux
             </div>
           </div>
         </div>
-        <div class="right-image-post">
+
+        <!-- right-image-post , divIntrest-left post dont delete this -->
+        <!-- <div class="right-image-post">
           <div class="row">
             <div class="col-md-6">
               <div class="section-heading left-text" id="divIntrest-left">
@@ -87,60 +90,14 @@ https://templatemo.com/tm-531-reflux
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
+
     </section>
 
     <section class="section my-services" data-section="section2">
       <div class="container">
         <div class="section-heading" id="divResearchHighlight">
-
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <!-- <div class="service-item">
-                <div class="first-service-icon service-icon"></div>
-                <h4>HTML5 &amp; CSS3</h4>
-                <p>
-                  Phasellus non convallis dolor. Integer tempor hendrerit arcu
-                  at bibendum. Sed ac ante non metus vehicula congue quis eget
-                  eros.
-                </p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="service-item">
-                <div class="second-service-icon service-icon"></div>
-                <h4>Creative Ideas</h4>
-                <p>
-                  Proin lacus massa, eleifend sed fermentum in, dignissim vel
-                  metus. Nunc accumsan leo nec felis porttitor, ultricies
-                  faucibus purus mollis.
-                </p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="service-item">
-                <div class="third-service-icon service-icon"></div>
-                <h4>Easy Customize</h4>
-                <p>
-                  Integer suscipit condimentum aliquet. Nam quis risus metus.
-                  Nullam faucibus quam eget arcu pretium tincidunt. Nam libero
-                  dui.
-                </p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="service-item">
-                <div class="fourth-service-icon service-icon"></div>
-                <h4>Admin Dashboard</h4>
-                <p>
-                  Vivamus et dui a massa venenatis fringilla. Proin lacus massa,
-                  eleifend sed fermentum in, dignissim vel metus. Nunc accumsan
-                  leo nec felis porttitor.
-                </p>
-              </div>
-            </div> -->
-          </div>
+          <!-- dynamically loading -->
         </div>
     </section>
 
@@ -303,13 +260,13 @@ https://templatemo.com/tm-531-reflux
 
         <div class="left-image-post">
           <div id="divNews">
-            
+
           </div>
         </div>
-       
+
       </div>
 
-      
+
 
     </section>
 
@@ -326,6 +283,18 @@ https://templatemo.com/tm-531-reflux
     </section>
   </div>
   <br>
+  <!--  -->
+
+  <nav class="main-nav" role="navigation">
+    <div class="main-menu">
+      <a href="#section1">
+        <div class="circle-div">
+          top
+        </div>
+      </a>
+    </div>
+  </nav>
+
 
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
@@ -434,11 +403,12 @@ https://templatemo.com/tm-531-reflux
       document.getElementById('divIntrest-right').innerHTML =
         '<h4> Research Interests </h4>' +
         '<span>' + current_data.intrestContent + '</span>'
-        // '<div class="white-button"> <a href="#">Read More</a>  </div>'
-      document.getElementById('divIntrest-left').innerHTML =
-        '<h4> Research Interests </h4>' +
-        '<span>' + current_data.intrestContent + '</span>' 
-        // '<div class="white-button"> <a href="#">Read More</a>  </div>'
+      // '<div class="white-button"> <a href="#">Read More</a>  </div>'
+      // document.getElementById('divIntrest-left').innerHTML =
+      //   '<h4> Research Interests </h4>' +
+      //   '<span>' + current_data.intrestContent + '</span>'
+      // '<div class="white-button"> <a href="#">Read More</a>  </div>'
+      loadIntrestContentImage(data.prof);
       document.getElementById("divResearchHighlight").innerHTML =
         '<h2>Research Highlight</h2><div class="line-dec"></div>' +
         '<span>' + current_data.researchHighLightContent + '</span>';
@@ -461,7 +431,7 @@ https://templatemo.com/tm-531-reflux
       //divNews
       document.getElementById('divNews').innerHTML = getNewsContent(data.news);
       loadNewsContentImage(data.news);
-      
+
 
       //divContactContent
       document.getElementById("divContactContent").innerHTML = getContactContent(data.prof);
@@ -530,34 +500,41 @@ https://templatemo.com/tm-531-reflux
       return html;
     }
 
-    function getNewsContent(news){
-      var index=0;
+    function getNewsContent(news) {
+      var index = 0;
       var html = "";
-      news.forEach((n)=>{
-      html = html + '<div class="row"><div class="col-md-3"><div class="left-image">';
-      html = html + '<div class="image" id="news-image' + index +'"></div></div></div>';
-      
-      html = html + '<div class="col-md-9"><div class="section-heading right-text">';
-      html = html + '<span>' + news[index].content + '</span></div></div></div></br>';
-      index++;
+      news.forEach((n) => {
+        html = html + '<div class="row"><div class="col-md-3"><div class="left-image">';
+        html = html + '<div class="image" id="news-image' + index + '"></div></div></div>';
+
+        html = html + '<div class="col-md-9"><div class="section-heading right-text">';
+        html = html + '<span>' + news[index].content + '</span></div></div></div></br>';
+        index++;
       })
       return html;
     }
 
-    function loadNewsContentImage(news){
-      var index=0;
-      news.forEach((n)=>{
+    function loadIntrestContentImage(prof) {
       var img = document.createElement('img');
-      img.src = 'assets/images/' + data.news[index].news_img;
-      img.alt = data.news[index].title;
-      var imageid = 'news-image' + index;
-      document.getElementById(imageid).appendChild(img);
-      index++;
+      img.src = 'assets/images/' + prof.intrestContent_image;
+      img.alt = 'intrestContent_image';
+      var imageDivId = 'divIntrestContentImage';
+      document.getElementById(imageDivId).appendChild(img);
+    }
+
+    function loadNewsContentImage(news) {
+      var index = 0;
+      news.forEach((n) => {
+        var img = document.createElement('img');
+        img.src = 'assets/images/' + data.news[index].news_img;
+        img.alt = data.news[index].title;
+        var imageid = 'news-image' + index;
+        document.getElementById(imageid).appendChild(img);
+        index++;
       })
     }
 
     function getContactContent(prof) {
-      console.log(prof)
       var html = "";
       html = html + "<ul>";
       if (prof.emailId)
@@ -622,7 +599,6 @@ https://templatemo.com/tm-531-reflux
         //image will show when run in local server 
         if (isDoesFileExist('assets/images/' + e.myphoto, e.name))
         {
-          console.log('i am here')
           img = document.createElement('img')
           img.src = doesFileExist('assets/images/' + e.myphoto) ?
             'assets/images/' + e.myphoto : e.gender.toLowerCase() == 'male' ?
