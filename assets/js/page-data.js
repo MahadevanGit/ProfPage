@@ -1,6 +1,6 @@
 var rules = {
-    "title" : "initialize the data in this file.",
-    "rule1" : "left-side - data don't modify ; right-side - data only can modify ; ex => 'codeside': 'valueside' => codeside can not modify. valueside can not modify."
+    "title": "initialize the data in this file.",
+    "rule1": "left-side - data don't modify ; right-side - data only can modify ; ex => 'codeside': 'valueside' => codeside can not modify. valueside can not modify."
 };
 
 var data = {
@@ -246,7 +246,67 @@ var data = {
         "news_img": "gomathi.jpg",
         "footer": "date or some content"
     }
-    ]
+    ],
+    "photogallery": [{
+        "header": "People",
+        "content": [
+            {
+                "title": "P-Caption1 title",
+                "info": "Give some info of the image. P-Caption1 title info",
+                "pgimg": "portfolio-02.jpg"
+            },
+            {
+                "title": "P-Caption2 title",
+                "info": "Give some info of the image. P-Caption2 title info",
+                "pgimg": "portfolio-04.jpg"
+            }
+        ]
+    },
+    {
+        "header": "Nature",
+        "content": [
+            {
+                "title": "N-Caption1 title",
+                "info": "Give some info of the image. N-Caption1 title info",
+                "pgimg": "portfolio-01.jpg"
+            },
+            {
+                "title": "N-Caption2 title",
+                "info": "Give some info of the image. N-Caption2 title info",
+                "pgimg": "portfolio-05.jpg"
+            }
+        ]
+    },
+    {
+        "header": "Flights",
+        "content": [
+            {
+                "title": "Flight1",
+                "info": "Give some info of the image. A-Caption1 title info",
+                "pgimg": "flight1.jpg"
+            },
+            {
+                "title": "Flight2",
+                "info": "Give some info of the image. A-Caption2 title info",
+                "pgimg": "flight2.jpg"
+            },
+            {
+                "title": "Flight3",
+                "info": "Give some info of the image. A-Caption1 title info",
+                "pgimg": "flight3.jpg"
+            },
+            {
+                "title": "Flight4",
+                "info": "Give some info of the image. A-Caption2 title info",
+                "pgimg": "flight4.jpg"
+            },
+            {
+                "title": "Flight5",
+                "info": "Give some info of the image. A-Caption1 title info",
+                "pgimg": "flight5.jpg"
+            }
+        ]
+    }]
 }
 
 

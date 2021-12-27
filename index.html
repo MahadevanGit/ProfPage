@@ -20,7 +20,7 @@ https://templatemo.com/tm-531-reflux
   <link rel="stylesheet" href="assets/css/fontawesome.css" />
   <link rel="stylesheet" href="assets/css/templatemo-style.css" />
   <link rel="stylesheet" href="assets/css/owl.css" />
-  <link rel="stylesheet" href="assets/css/lightbox.css" />
+  <!-- <link rel="stylesheet" href="assets/css/lightbox.css" /> -->
 </head>
 
 <body>
@@ -66,7 +66,7 @@ https://templatemo.com/tm-531-reflux
             <div class="col-md-6">
               <div id="divIntrestContentImage" class="left-image">
                 <!-- <img id="intrestContent-image" /> src="assets/images/myIntrest.jpg" alt="" -->
-                
+
               </div>
             </div>
             <div class="col-md-6">
@@ -155,98 +155,8 @@ https://templatemo.com/tm-531-reflux
           <h2>Photo Galary</h2>
           <div class="line-dec"></div>
         </div>
-        <div class="row">
-          <div class="isotope-wrapper">
-            <form class="isotope-toolbar">
-              <label><input type="radio" data-type="*" checked="" name="isotope-filter" />
-                <span>all</span></label>
-              <label><input type="radio" data-type="people" name="isotope-filter" />
-                <span>people</span></label>
-              <label><input type="radio" data-type="nature" name="isotope-filter" />
-                <span>nature</span></label>
-              <!-- <label
-                  ><input
-                    type="radio"
-                    data-type="animals"
-                    name="isotope-filter"
-                  />
-                  <span>animals</span></label
-                > -->
-            </form>
-            <div class="isotope-box">
-              <div class="isotope-item" data-type="nature">
-                <figure class="snip1321">
-                  <img src="assets/images/portfolio-01.jpg" alt="sq-sample26" />
-                  <figcaption>
-                    <a href="assets/images/portfolio-01.jpg" data-lightbox="image-1" data-title="Caption"><i
-                        class="fa fa-search"></i></a>
-                    <h4>First Title</h4>
-                    <span>free to use our template</span>
-                  </figcaption>
-                </figure>
-              </div>
-
-              <div class="isotope-item" data-type="people">
-                <figure class="snip1321">
-                  <img src="assets/images/portfolio-02.jpg" alt="sq-sample26" />
-                  <figcaption>
-                    <a href="assets/images/portfolio-02.jpg" data-lightbox="image-1" data-title="Caption"><i
-                        class="fa fa-search"></i></a>
-                    <h4>Second Title</h4>
-                    <span>please tell your friends</span>
-                  </figcaption>
-                </figure>
-              </div>
-
-              <div class="isotope-item" data-type="animals">
-                <figure class="snip1321">
-                  <img src="assets/images/portfolio-03.jpg" alt="sq-sample26" />
-                  <figcaption>
-                    <a href="assets/images/portfolio-03.jpg" data-lightbox="image-1" data-title="Caption"><i
-                        class="fa fa-search"></i></a>
-                    <h4>Item Third</h4>
-                    <span>customize anything</span>
-                  </figcaption>
-                </figure>
-              </div>
-
-              <div class="isotope-item" data-type="people">
-                <figure class="snip1321">
-                  <img src="assets/images/portfolio-04.jpg" alt="sq-sample26" />
-                  <figcaption>
-                    <a href="assets/images/portfolio-04.jpg" data-lightbox="image-1" data-title="Caption"><i
-                        class="fa fa-search"></i></a>
-                    <h4>Item Fourth</h4>
-                    <span>Re-distribution not allowed</span>
-                  </figcaption>
-                </figure>
-              </div>
-
-              <div class="isotope-item" data-type="nature">
-                <figure class="snip1321">
-                  <img src="assets/images/portfolio-05.jpg" alt="sq-sample26" />
-                  <figcaption>
-                    <a href="assets/images/portfolio-05.jpg" data-lightbox="image-1" data-title="Caption"><i
-                        class="fa fa-search"></i></a>
-                    <h4>Fifth Awesome</h4>
-                    <span>Ut sollicitudin risus</span>
-                  </figcaption>
-                </figure>
-              </div>
-
-              <div class="isotope-item" data-type="animals">
-                <figure class="snip1321">
-                  <img src="assets/images/portfolio-06.jpg" alt="sq-sample26" />
-                  <figcaption>
-                    <a href="assets/images/portfolio-06.jpg" data-lightbox="image-1" data-title="Caption"><i
-                        class="fa fa-search"></i></a>
-                    <h4>Awesome Sixth</h4>
-                    <span>Donec eget massa ante</span>
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
-          </div>
+        <div id="divPhotoGalaryPhotoContent">
+          <!-- dynamically loading -->
         </div>
       </div>
     </section>
@@ -305,6 +215,7 @@ https://templatemo.com/tm-531-reflux
   <script src="assets/js/owl-carousel.js"></script>
   <script src="assets/js/lightbox.js"></script>
   <script src="assets/js/custom.js"></script>
+  <script src="assets/js/ultralb.js"></script>
   <script src="assets/js/page-data.js"></script>
   <script src="assets/js/custome-email.js"></script>
   <script src="assets/js/smtp.js"></script>
@@ -428,11 +339,13 @@ https://templatemo.com/tm-531-reflux
       document.getElementById("divPublications").innerHTML = getPublications(data.publications);
       //divServiceAndAwards
       document.getElementById("divServiceAndAwards").innerHTML = getServiceAndAwards(data.serviceAndAwards);
+      //divPhotoGalaryFormContent
+      //document.getElementById("divPhotoGalaryFormContent").innerHTML = getPhotogalleryFormContent(data.photogallery);
+      //divPhotoGalaryPhotoContent
+      document.getElementById("divPhotoGalaryPhotoContent").innerHTML = getPhotogalleryPhotoContent(data.photogallery);
       //divNews
       document.getElementById('divNews').innerHTML = getNewsContent(data.news);
       loadNewsContentImage(data.news);
-
-
       //divContactContent
       document.getElementById("divContactContent").innerHTML = getContactContent(data.prof);
     }
@@ -500,12 +413,37 @@ https://templatemo.com/tm-531-reflux
       return html;
     }
 
+    function getPhotogalleryFormContent(photogallery) {
+      var html = "";
+      html = html + "<label><input type='radio' data-type='*' checked='' name='isotope-filter'/><span>all</span></label>";
+      photogallery.forEach((obj) => {
+        console.log(obj.header);
+        html = html + "<label><input type='radio' data-type= ";
+        html = html + obj.header + " name='isotope-filter'/><span>" + obj.header + "</span></label>";
+      });
+      return html;
+    }
+
+    function getPhotogalleryPhotoContent(photogallery) {
+      var html = "";
+      photogallery.forEach((obj) => {
+        html += "<h4>" + obj.header + "</h4>";
+        html += "<div class='ultralb'><div class='pg-div tclass'>";
+        obj.content.forEach((i) => {
+          console.log(i.pgimg)
+          html = html + "<img src='assets/images/" + i.pgimg + "' alt=' " + i.title + " &&$$ " + i.info + "' />";
+        })
+        html += "</div></div>";
+      })
+      return html;
+    }
+
     function getNewsContent(news) {
       var index = 0;
       var html = "";
       news.forEach((n) => {
         html = html + '<div class="row"><div class="col-md-3"><div class="left-image">';
-        html = html + '<div class="image" id="news-image' + index + '"></div></div></div>';
+        html = html + '<div class="image" id="news-image' + index + '"></div></div></div > ';
 
         html = html + '<div class="col-md-9"><div class="section-heading right-text">';
         html = html + '<span>' + news[index].content + '</span></div></div></div></br>';
@@ -649,11 +587,6 @@ https://templatemo.com/tm-531-reflux
 
     //Call the function here
     getProfileCurrentData();
-
-
-
-
-
   </script>
 </body>
 
