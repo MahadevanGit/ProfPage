@@ -274,6 +274,9 @@ https://templatemo.com/tm-531-reflux
 
     //get data 
     var current_data = data.prof;
+    var photo_gallery_folder = 'assets/images/photo_gallery/';
+    var photo_team_members_folder = 'assets/images/photo_team_members/';
+    var photo_common_fotder = 'assets/images/photo_common/';
 
     ////////Define the function here////////
 
@@ -301,7 +304,7 @@ https://templatemo.com/tm-531-reflux
     function getProfileCurrentData() {
       //var t = false;
       var img = document.createElement('img');
-      img.src = 'assets/images/' + current_data.myphoto;
+      img.src = photo_team_members_folder + current_data.myphoto;
       img.alt = current_data.name;
       document.getElementById('profile-image').appendChild(img);
       document.getElementById('profileName').innerHTML =
@@ -351,7 +354,7 @@ https://templatemo.com/tm-531-reflux
     }
 
     function getMyPhoto(current_data) {
-      var rootPath = 'assets/images/';
+      var rootPath = photo_team_members_folder;
       var myphotoPath = "";
       myphotoPath = rootPath + current_data.myphoto;
       if (!ImageExist(myphotoPath))
@@ -429,7 +432,7 @@ https://templatemo.com/tm-531-reflux
         html += "<h4>" + obj.header + "</h4>";
         html += "<div class='ultralb'><div class='pg-div tclass'>";
         obj.content.forEach((i) => {
-          html = html + "<img src='assets/images/" + i.pgimg + "' alt=' " + i.title + " &&$$ " + i.info + "' />";
+          html = html + "<img src='" + photo_gallery_folder + i.pgimg + "' alt=' " + i.title + " &&$$ " + i.info + "' />";
         })
         html += "</div></div>";
       })
@@ -452,7 +455,7 @@ https://templatemo.com/tm-531-reflux
 
     function loadIntrestContentImage(prof) {
       var img = document.createElement('img');
-      img.src = 'assets/images/' + prof.intrestContent_image;
+      img.src = photo_common_fotder + prof.intrestContent_image;
       img.alt = 'intrestContent_image';
       var imageDivId = 'divIntrestContentImage';
       document.getElementById(imageDivId).appendChild(img);
@@ -462,7 +465,7 @@ https://templatemo.com/tm-531-reflux
       var index = 0;
       news.forEach((n) => {
         var img = document.createElement('img');
-        img.src = 'assets/images/' + data.news[index].news_img;
+        img.src = photo_team_members_folder + data.news[index].news_img;
         img.alt = data.news[index].title;
         var imageid = 'news-image' + index;
         document.getElementById(imageid).appendChild(img);
@@ -533,12 +536,12 @@ https://templatemo.com/tm-531-reflux
       var img = "";
       obj.collection.forEach(e => {
         //image will show when run in local server 
-        if (isDoesFileExist('assets/images/' + e.myphoto, e.name))
+        if (isDoesFileExist(photo_team_members_folder + e.myphoto, e.name))
         {
           img = document.createElement('img')
-          img.src = doesFileExist('assets/images/' + e.myphoto) ?
-            'assets/images/' + e.myphoto : e.gender.toLowerCase() == 'male' ?
-              'assets/images/male-default.jpg' : 'assets/images/female-default.jpg';
+          img.src = doesFileExist(photo_team_members_folder + e.myphoto) ?
+          photo_team_members_folder + e.myphoto : e.gender.toLowerCase() == 'male' ?
+          photo_team_members_folder + 'male-default.jpg' : photo_team_members_folder + 'female-default.jpg';
           img.alt = e.name;
           img.classList.add("rtimg");
         }

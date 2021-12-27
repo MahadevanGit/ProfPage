@@ -51,16 +51,16 @@ var data = {
         },
         {
             "code": "Staff",
-            "name": "Kathiravan",
+            "name": "Yong Ying Tay",
             "gender": "male",
             "designation": "Research Associative",
             "emailId": "email@nus.com",
             "aboutme": "B.Sc.Chemistry",
-            "pageTitle": "Kathiravan",
+            "pageTitle": "Yong Ying Tay",
             "intrestContent": "My research interests are in functional polymers, nanomaterials, exploring the mechanism of nanosafety/nanotoxicity, environmental impact of  microplastics in the environment, materials for environmental applications.",
             "researchHighLightContent": "",
             "teachingContent": "",
-            "myphoto": "Kathiravan.jpg"
+            "myphoto": "YongYing.jpg"
         },
         {
             "code": "Alumini",
@@ -237,7 +237,7 @@ var data = {
     "news": [{
         "title": "New phd student",
         "content": "Polymer solar cells (PSCs) have attracted great attention in recent years because of their advantages of easy fabrication, low cost, light weight, and potential for flexible devices. However, the power conversion efficiency (PCE) of the PSCs needs to be improved for future commercial applications. Factors limiting the PCE of the PSCs include the low exploitation of sunlight due to the narrow absorption band of conjugated polymers, and the low charge-transport efficiency in the devices due to the lower charge-carrier mobility of the polymer photovoltaic materials. In this Research News article, recent progress in new conjugated polymer photovoltaic materials fabricated by our group and others is reviewed, including polythiophene (PT) and poly(thienylene vinylene) derivatives with conjugated side chains for a broad absorption band, crosslinked PT derivatives with conjugated bridges for higher hole mobility, and low-bandgap donor–acceptor copolymers for broad, red-shifted absorption to match the solar spectrum.",
-        "news_img": "Kathiravan.jpg",
+        "news_img": "YongYing.jpg",
         "footer": "date or some content"
     },
     {
