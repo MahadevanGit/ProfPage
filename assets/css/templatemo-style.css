@@ -23,7 +23,7 @@ body {
 
 .circle-div {
     border: 2px solid var(--nus-blue-color);
-    background-color: white;
+    background-color: transparent;
     height: 35px;
     width: 35px;
     border-radius: 100%;
@@ -31,6 +31,11 @@ body {
     bottom: 25px;
     right: 25px;
     cursor: pointer;
+}
+
+.circle-div:hover{
+    color: white;
+    background-color: var(--nus-blue-color);
 }
 
 #page-wraper {
@@ -450,6 +455,7 @@ html {
 .section-heading h2 {
     font-size: 32px;
     font-weight: 700;
+    padding-top: 10px;
 	color: var(--nus-blue-color);
     /* color: #fff; T1*/
 }
@@ -458,6 +464,7 @@ html {
     font-size: 32px;
     font-weight: 700;
     color: #101010;
+    text-align: left;
 	/* color: #fff; T1*/
 }
 
@@ -536,9 +543,8 @@ button:hover {
 }
 
 .left-image-post {
-    margin-top: 60px;
-    padding-top: 60px;
-    /* border-top: 2px solid grey; */
+    /* margin-top: 60px;
+    padding-top: 60px; */
 }
 
 .left-image img,
@@ -643,7 +649,8 @@ button:hover {
 
 section.my-work .section-heading {
     text-align: center;
-    padding: 80px 45px 50px 45px;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
 .isotope-wrapper {
@@ -807,7 +814,6 @@ figure.snip1321.hover:after {
 
 .sec-news {
     text-align: center;
-    padding-top: 80px;
 }
 
 
@@ -815,12 +821,11 @@ figure.snip1321.hover:after {
 
 section.contact-me {
     border-bottom: 3px solid grey;
-    padding-top: 80px;
     padding-bottom: 40px;
 }
 
 .contactme-li{
-    padding-top: 60px;
+    padding-top: 10px;
 }
 
 #contact input {

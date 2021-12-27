@@ -25,7 +25,7 @@ ultralb = {
 		var _this = this;
 		this.prevButton.style.visibility = (this.currentIndex > 0?'visible':'hidden');
 		this.nextButton.style.visibility = ((this.currentIndex+1) < this.totalImages?'visible':'hidden');
-		this.image.src = this.loading;
+		this.image.src = 'image loading....' ; //this.loading;
 		this.overlay.style.display = this.container.style.display = 'block';
 		var img = new Image();
 		var title = this.allImages[this.currentIndex].getAttribute('alt');

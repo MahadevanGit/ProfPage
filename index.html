@@ -417,7 +417,6 @@ https://templatemo.com/tm-531-reflux
       var html = "";
       html = html + "<label><input type='radio' data-type='*' checked='' name='isotope-filter'/><span>all</span></label>";
       photogallery.forEach((obj) => {
-        console.log(obj.header);
         html = html + "<label><input type='radio' data-type= ";
         html = html + obj.header + " name='isotope-filter'/><span>" + obj.header + "</span></label>";
       });
@@ -430,7 +429,6 @@ https://templatemo.com/tm-531-reflux
         html += "<h4>" + obj.header + "</h4>";
         html += "<div class='ultralb'><div class='pg-div tclass'>";
         obj.content.forEach((i) => {
-          console.log(i.pgimg)
           html = html + "<img src='assets/images/" + i.pgimg + "' alt=' " + i.title + " &&$$ " + i.info + "' />";
         })
         html += "</div></div>";
