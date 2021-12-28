@@ -101,10 +101,16 @@ https://templatemo.com/tm-531-reflux
         </div>
     </section>
 
-    <section class="section my-work" data-section="section3">
+    <section class="section news sec-news" data-section="section3">
       <div class="container">
-        <div class="section-heading" id="divTeachingContent">
-          <!-- dynamically loading -->
+        <div class="section-heading">
+          <h2>Teaching</h2>
+          <div class="line-dec"></div>
+        </div>
+        <div class="left-image-post">
+          <div id="divTeachingContent">
+            <!-- dynamically loading -->
+          </div>
         </div>
       </div>
     </section>
@@ -276,7 +282,7 @@ https://templatemo.com/tm-531-reflux
     var current_data = data.prof;
     var photo_gallery_folder = 'assets/images/photo_gallery/';
     var photo_team_members_folder = 'assets/images/photo_team_members/';
-    var photo_common_fotder = 'assets/images/photo_common/';
+    var photo_common_folder = 'assets/images/photo_common/';
 
     ////////Define the function here////////
 
@@ -326,9 +332,8 @@ https://templatemo.com/tm-531-reflux
       document.getElementById("divResearchHighlight").innerHTML =
         '<h2>Research Highlight</h2><div class="line-dec"></div>' +
         '<span>' + current_data.researchHighLightContent + '</span>';
-      document.getElementById("divTeachingContent").innerHTML =
-        '<h2>Teaching</h2><div class="line-dec"></div>' +
-        current_data.teachingContent;
+      document.getElementById('divTeachingContent').innerHTML = getContent(current_data.teachingContent, 'tc');
+      loadContentImage(current_data.teachingContent, 'tc');
       //divResearchTeam-right
       document.getElementById("divResearchTeamRight").innerHTML = getResearchTeamRightByCategory(listOfStudent);
       createImgTeamMembers(listOfStudent);
@@ -347,8 +352,8 @@ https://templatemo.com/tm-531-reflux
       //divPhotoGalaryPhotoContent
       document.getElementById("divPhotoGalaryPhotoContent").innerHTML = getPhotogalleryPhotoContent(data.photogallery);
       //divNews
-      document.getElementById('divNews').innerHTML = getNewsContent(data.news);
-      loadNewsContentImage(data.news);
+      document.getElementById('divNews').innerHTML = getContent(data.news, 'news');
+      loadContentImage(data.news, 'news');
       //divContactContent
       document.getElementById("divContactContent").innerHTML = getContactContent(data.prof);
     }
@@ -381,6 +386,8 @@ https://templatemo.com/tm-531-reflux
           '<p>' + e.name + ' </p>' +
           '<p>' + e.designation + '</p>' +
           '<p>' + e.emailId + '</p>' +
+          '<p>' + e.aboutme + '</p>' +
+          '<p class="staff-content">' + e.intrestContent + '</p>' +
           '</div></div></div><br>';
       })
       return ele;
@@ -439,15 +446,23 @@ https://templatemo.com/tm-531-reflux
       return html;
     }
 
-    function getNewsContent(news) {
+    function getContent(content, sectionName) {
       var index = 0;
       var html = "";
-      news.forEach((n) => {
-        html = html + '<div class="row"><div class="col-md-3"><div class="left-image">';
-        html = html + '<div class="image" id="news-image' + index + '"></div></div></div > ';
-
-        html = html + '<div class="col-md-9"><div class="section-heading right-text">';
-        html = html + '<span>' + news[index].content + '</span></div></div></div></br>';
+      content.forEach((n) => {
+        html += '<span class="section-heading"><h4>' + content[index].title + '</h4></span>';
+        html = html + '<div class="row">';
+        console.log(content[index].image)
+        if (content[index].image != '')
+        {
+          html = html + '<div class="col-md-3"><div class="left-image"><div class="image" id="' + sectionName + '-image' + index + '"></div></div></div >';
+          html = html + '<div class="col-md-9"><div class="section-heading right-text">';
+        }
+        else{
+          html = html + '<div class="col-md-12"><div class="section-heading right-text">';
+        }
+        html = html + '<span>' + content[index].content + '</span></div></div></div>';
+        html += '<div class="footer">' + content[index].footer + '</div></br>';
         index++;
       })
       return html;
@@ -455,20 +470,24 @@ https://templatemo.com/tm-531-reflux
 
     function loadIntrestContentImage(prof) {
       var img = document.createElement('img');
-      img.src = photo_common_fotder + prof.intrestContent_image;
+      img.src = photo_common_folder + prof.intrestContent_image;
       img.alt = 'intrestContent_image';
       var imageDivId = 'divIntrestContentImage';
       document.getElementById(imageDivId).appendChild(img);
     }
 
-    function loadNewsContentImage(news) {
+    function loadContentImage(content, sectionName) {
       var index = 0;
-      news.forEach((n) => {
-        var img = document.createElement('img');
-        img.src = photo_team_members_folder + data.news[index].news_img;
-        img.alt = data.news[index].title;
-        var imageid = 'news-image' + index;
-        document.getElementById(imageid).appendChild(img);
+      content.forEach((n) => {
+        if (content[index].image != '')
+        {
+          var img = document.createElement('img');
+          img.src = photo_common_folder + content[index].image;
+          img.alt = content[index].title;
+          var imageid = sectionName + '-image' + index;
+          console.log(imageid);
+          document.getElementById(imageid).appendChild(img);
+        }
         index++;
       })
     }
@@ -510,6 +529,8 @@ https://templatemo.com/tm-531-reflux
           '<p>' + e.name + ' </p>' +
           '<p>' + e.designation + '</p>' +
           '<p>' + e.emailId + '</p>' +
+          '<p>' + e.aboutme + '</p>' +
+          '<p class="staff-content">' + e.intrestContent + '</p>' +
           '</div></div>' +
           '<div class="col-md-3"> <div class="right-image" id="' +
           e.name.replace(" ", "_") + '">' +
@@ -518,19 +539,19 @@ https://templatemo.com/tm-531-reflux
       return ele;
     }
 
-    function getResearchAluminiTeamRightByCategory(obj) {
-      var ele = "<h4>" + obj.category + "</h4>";
-      obj.collection.forEach(e => {
-        ele = ele + '<div class="row"><div class="col-md-3"><div class="right-image" id="' +
-          e.name.replace(" ", "_") + '">' +
-          '</div></div><div class="col-md-9"><div class="left-text">' +
-          '<p>' + e.name + ' </p>' +
-          '<p>' + e.designation + '</p>' +
-          '<p>' + e.emailId + '</p>' +
-          '</div></div></div><br>';
-      })
-      return ele;
-    }
+    // function getResearchAluminiTeamRightByCategory(obj) {
+    //   var ele = "<h4>" + obj.category + "</h4>";
+    //   obj.collection.forEach(e => {
+    //     ele = ele + '<div class="row"><div class="col-md-3"><div class="right-image" id="' +
+    //       e.name.replace(" ", "_") + '">' +
+    //       '</div></div><div class="col-md-9"><div class="left-text">' +
+    //       '<p>' + e.name + ' </p>' +
+    //       '<p>' + e.designation + '</p>' +
+    //       '<p>' + e.emailId + '</p>' +
+    //       '</div></div></div><br>';
+    //   })
+    //   return ele;
+    // }
 
     function createImgTeamMembers(obj) {
       var img = "";
@@ -540,8 +561,8 @@ https://templatemo.com/tm-531-reflux
         {
           img = document.createElement('img')
           img.src = doesFileExist(photo_team_members_folder + e.myphoto) ?
-          photo_team_members_folder + e.myphoto : e.gender.toLowerCase() == 'male' ?
-          photo_team_members_folder + 'male-default.jpg' : photo_team_members_folder + 'female-default.jpg';
+            photo_team_members_folder + e.myphoto : e.gender.toLowerCase() == 'male' ?
+              photo_team_members_folder + 'male-default.jpg' : photo_team_members_folder + 'female-default.jpg';
           img.alt = e.name;
           img.classList.add("rtimg");
         }

@@ -1,0 +1,20 @@
+photo_common
+============
+Home - ResearchIntrest
+Teaching
+News
+webpage backgroung picture with this name page-bg.jpg
+if want to change new backgroung picture then add the picture 
+in this folder and change the name to page-bg.jpg and save.
+
+photo_gallery
+============
+Photo Gallery
+
+photo_team_members
+===================
+Research Team
+
+web_icons
+============
+<Dont change>

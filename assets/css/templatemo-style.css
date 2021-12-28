@@ -21,6 +21,12 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+.footer{
+    color: #101010;
+    text-align: right;
+    font-style: italic;
+}
+
 .circle-div {
     border: 2px solid var(--nus-blue-color);
     background-color: transparent;
@@ -39,7 +45,7 @@ body {
 }
 
 #page-wraper {
-    background: url(../images/page-bg.jpg) no-repeat center center fixed;
+    background: url(../images/photo_common/page-bg.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -77,6 +83,13 @@ p {
     /* color: #fff; T1*/
     letter-spacing: 0.5px;
     font-weight: 600;
+}
+
+.section-heading .left-text p {
+    color: #101010;
+    margin: 0px;
+    text-align: left;
+    padding-left: 10px;
 }
 
 h4 {
@@ -205,6 +218,11 @@ label span{
     /* color: #fff; T1*/
     letter-spacing: 0.5px;
     font-weight: 600;
+}
+
+.staff-content{
+    padding-top: 5px;
+    font-size: 16px;
 }
 
 html {
@@ -465,6 +483,7 @@ html {
     font-weight: 700;
     color: #101010;
     text-align: left;
+    padding-bottom: 10px;
 	/* color: #fff; T1*/
 }
 
