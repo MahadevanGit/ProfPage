@@ -204,7 +204,7 @@ https://templatemo.com/tm-531-reflux
   <nav class="main-nav" role="navigation">
     <div class="main-menu">
       <a href="#section1">
-        <div class="circle-div">
+        <div id="divGoToTop">
           top
         </div>
       </a>
@@ -265,6 +265,10 @@ https://templatemo.com/tm-531-reflux
             .addClass("active")
             .siblings()
             .removeClass("active");
+			if(currentId == 'section1')
+			$("#divGoToTop").removeClass("circle-div");
+			else
+			$("#divGoToTop").addClass("circle-div");
         }
       });
     };
@@ -337,8 +341,8 @@ https://templatemo.com/tm-531-reflux
       //divResearchTeam-right
       document.getElementById("divResearchTeamRight").innerHTML = getResearchTeamRightByCategory(listOfStudent);
       createImgTeamMembers(listOfStudent);
-      //divResearchTeam-left
-      document.getElementById("divResearchTeamLeft").innerHTML = getResearchTeamLeftByCategory(listOfStaff);
+      //divResearchTeam-right
+      document.getElementById("divResearchTeamLeft").innerHTML = getResearchTeamRightByCategory(listOfStaff);
       createImgTeamMembers(listOfStaff);
       //divResearchAluminiTeamRight
       document.getElementById("divResearchAluminiTeamRight").innerHTML = getResearchTeamRightByCategory(listOfAlumini);
