@@ -22,13 +22,13 @@ var data =
         "title": "CM4252 Polymer Chemistry 2",
         "content": "This module prepares the students for the polymer related industry. It covers the chemistry of polymer degradation under the influence of heat, oxygen and UV light and ways of retardation. The science and technology of elastomers or rubber like polymeric materials will be discussed and compared to solid plastics. The synthesis, properties and applications of contemporary engineering and specialty polymers and the role of additives in plastics will also be discussed.",
         "image": "polymerChemistry2.jpg",
-        "footer": "date or some content"
+        "footer": ""
       },
       {
         "title": "CM5161 Advanced Chemical Laboratory Safety",
         "content": "This multidisciplinary module provides a broad coverage on safety-related issues in our laboratories. The main objective of this module is to introduce potential hazards and various safety measures which can be adopted to prevent accidents or personal injuries. Topics such as personal protection, safe handling and disposal of various chemicals, standard operating procedures, risk assessment, emergency measures and first aid practices will be introduced. Legislation and laws pertaining to workplace safety will also be discussed.",
         "image": "",
-        "footer": "date or some content"
+        "footer": ""
       }
     ],
     "myphoto": "VALIYAVEETTIL-Suresh.jpg",
@@ -120,7 +120,7 @@ var data =
     },
 	{
       "code": "Student",
-      "name": "Xinlin",
+      "name": "Jiang Xinlin",
       "gender": "male",
       "designation": "Master Student (Aug 2021)",
       "emailId": "e0732759@u.nus.edu",
@@ -130,9 +130,9 @@ var data =
     },
 	{
       "code": "Student",
-      "name": "Jie Wei",
+      "name": "Zuo Jiawei",
       "gender": "male",
-      "designation": "Master Student(Aug 2021)",
+      "designation": "Master Student (Aug 2021)",
       "emailId": "e0732759@u.nus.edu",
       "aboutme": "M.Sc. Chemistry",
       "intrestContent": "",
@@ -142,7 +142,7 @@ var data =
       "code": "Student",
       "name": " Sun Yanyun",
       "gender": "male",
-      "designation": "Master Student(Aug 2021)",
+      "designation": "Master Student (Aug 2021)",
       "emailId": "e0732813@u.nus.edu",
       "aboutme": "M.Sc. Chemistry",
       "intrestContent": "",
@@ -152,7 +152,7 @@ var data =
       "code": "Student",
       "name": " Ma Kaying",
       "gender": "male",
-      "designation": "Master Student(Aug 2021)",
+      "designation": "Master Student (Aug 2021)",
       "emailId": "e0732839@u.nus.edu",
       "aboutme": "M.Sc. Chemistry",
       "intrestContent": "",
@@ -162,7 +162,7 @@ var data =
       "code": "Student",
       "name": " Xi xeun",
       "gender": "male",
-      "designation": "Master Student(Aug 2021)",
+      "designation": "Master Student (Aug 2021)",
       "emailId": "",
       "aboutme": "M.Sc. Chemistry",
       "intrestContent": "",
@@ -172,7 +172,7 @@ var data =
       "code": "Student",
       "name": " Ta Ming",
       "gender": "male",
-      "designation": "Master Student(Aug 2021)",
+      "designation": "Master Student (Aug 2021)",
       "emailId": "e0732839@u.nus.edu",
       "aboutme": "M.Sc. Chemistry",
       "intrestContent": "",
@@ -781,13 +781,13 @@ var data =
       "title": "New phd student",
       "content": "",
       "image": "",
-      "footer": "date or some content"
+      "footer": ""
     },
     {
       "title": "New paper puplished by our student",
       "content": "",
       "image": "male-default.jpg",
-      "footer": "date or some content"
+      "footer": ""
     }
   ],
   "photogallery": [
